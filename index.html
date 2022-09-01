@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img id="nobita" src="https://4.bp.blogspot.com/-F3BvbEOagsE/WqeN3IE8SUI/AAAAAAABPjw/5oCbUEXem3cOOlu-82AUHdnubkqECtDqACKgBGAs/s320/Nobita_9.png"
+     width="250px"height="300px">
+<script>
+    var diChuyen = diChuyen=document.getElementById('nobita');
+        function upArrowPressed() {
+            diChuyen.style.top = parseInt(diChuyen.style.top) - 50 + 'px';
+        }
+
+        function downArrowPressed() {
+            diChuyen.style.top = parseInt(diChuyen.style.top) + 50 + 'px';
+        }
+
+        function leftArrowPressed() {
+            diChuyen.style.left = parseInt(diChuyen.style.left) - 50 + 'px';
+        }
+
+        function rightArrowPressed() {
+            diChuyen.style.left = parseInt(diChuyen.style.left) + 50 + 'px';
+        }
+        function moveSelection(evt) {
+            switch (evt.keyCode) {
+                case 37:
+                    leftArrowPressed();
+                    break;
+                case 39:
+                    rightArrowPressed();
+                    break;
+                case 38:
+                    upArrowPressed();
+                    break;
+                case 40:
+                    downArrowPressed();
+                    break;
+            }
+        }
+        function tong() {
+            window.addEventListener('keydown', moveSelection);
+                diChuyen.style.position = 'relative';
+                diChuyen.style.left = '500px';
+                diChuyen.style.top ='200px';
+    }
+
+    window.onload = tong;
+</script>
+</body>
+</html>
